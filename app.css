@@ -1,4 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Special Elite');
+@import url('https://fonts.googleapis.com/css?family=Homemade Apple');
+
+html {
+  width: 100%;
+  height: 100%;
+}
 
 body {
   background-position: center;
@@ -9,23 +15,58 @@ body {
 }
 
 img {
+  height: 100px;
   border-radius: 50%;
 }
 
-.container{
-  width: 1280px;
-  margin: auto;
+button {
+  size: 10px;
+  margin: 0 5px;
+  box-shadow:inset 0px 1px 0px 0px #f7c5c0;
+	background:linear-gradient(to bottom, #fc8d83 5%, #e4685d 100%);
+	background-color:#fc8d83;
+	border-radius:6px;
+	border:1px solid #d83526;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:15px;
+	padding:6px 24px;
+	text-shadow:0px 1px 0px #b23e35;
 }
-  
-.quotes-container{
+button:hover {
+  background:linear-gradient(to bottom, #e4685d 5%, #fc8d83 100%);
+	background-color:#e4685d;
+}
+
+p {
+  font-size: 1.5rem;
+  color: black;
+  font-family: 'Special Elite';
+}
+
+h3 {
+  font-size: 2rem;
+  color: black;
+  font-family: 'Homemade Apple';
+  line-height: 0.2;
+}
+
+.container {
   display: flex;
+  height: 100vh;
+  margin: auto;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 100vh;
 }
 
-.inner-quotes-container{
+.people {
+  display: flex;
+  flex-direction: row;
+  padding: 25px 0;
+}
+
+.personQuote {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,25 +75,10 @@ img {
   text-align: center;
   min-height: 400px;
   padding: 0 25px;
-  color: gray;
   border-radius: 10px;
   background-color: #F4EDEA;
-  border: 10px solid #06BDC1;
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.9); 
 }
-
-.inner-quotes-container p{
-  font-size: 1.5rem;
-  color: black;
-}
-
-.inner-quotes-container h3{
-  font-size: 2rem;
-  color: black;
-  font-family: 'Dancing Script', cursive;
-}
-
-.quote-btn{padding-top: 25px;}
 
 @media(max-width:1280px){
   .container{width: 95%;}
