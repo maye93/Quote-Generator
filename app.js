@@ -1,4 +1,6 @@
 var person = []
+var quote = 0
+var prevQuoteValue = -1
 let element = document.getElementById("getQuote")
 
 ////////// Tells the system the selected person //////////
@@ -9,19 +11,19 @@ document.getElementById('Margaret').onclick = function() {people("Margaret Atwoo
 document.getElementById('Geralt').onclick = function() {people("Geralt of Rivia")}
 
 ////////// Check if a different person is selected //////////
-function people(diffperson){
-  if(diffperson != person){
+function people(diffPerson){
+  if(diffPerson != person){
     person = []
-    person.push(diffperson)
-  } else if(diffperson == null){
-    person.push(diffperson)
+    person.push(diffPerson)
+  } else if(diffPerson == null){
+    person.push(diffPerson)
   }
   element.removeAttribute("hidden")
   console.log(person)
 }
 
 ////////// Generate a quote //////////
-function getQuote() {
+async function getQuote() {
   if(person == "Arthur Morgan"){ ////////// Arthur Morgan //////////
     var image = ["images/arthur.jpeg"]
     var quotes = [
@@ -68,7 +70,13 @@ function getQuote() {
       '"Evil is evil. Lesser, greater, middling... Makes no difference. The degree is arbitrary. The definition’s blurred. If I’m to choose between one evil and another... I’d rather not choose at all."'
     ]
   }
-  var quote = Math.floor(Math.random() * quotes.length)
+  while(prevQuoteValue == quote || prevQuoteValue == -1)
+  {
+    quote = await Math.floor(Math.random() * quotes.length)
+    console.log(quote)
+    prevQuoteValue = 0
+  }
+  prevQuoteValue = quote
   document.querySelector("#quote").textContent = quotes[quote]
   document.querySelector("#image").src = image
   document.querySelector("#person").textContent = person
